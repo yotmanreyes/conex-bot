@@ -11,17 +11,17 @@
             $bot->sendMessage($message->getChat()->getId(), 'pong!');
         });
         
-        $bot->command('consulta-usuario', function ($message) use ($bot) {
-            $bot->sendMessage($message->getChat()->getId(), '
-                Bienvenido a nuestro sistema de atención y soporte al usuario.
-                Por este medio podra consultar información como:
-                Fecha de Inscripciones
-                Información Personal
-                Consulta de Pagos
-                Soporte Tecnico
-                Cambiar codigo de verificación               
-            ');
-        });
+        
+        $bot->sendMessage('@conexstudios', '
+            Bienvenido a nuestro sistema de atención y soporte al usuario.
+            Por este medio podra consultar información como:
+            Fecha de Inscripciones
+            Información Personal
+            Consulta de Pagos
+            Soporte Tecnico
+            Cambiar codigo de verificación'
+        );
+      
         
         $bot->run();
     
