@@ -12,7 +12,7 @@
         });
         
         
-        $bot->sendMessage('@conexstudios', '
+        $bot->sendMessage(918738335, '
             Bienvenido a nuestro sistema de atención y soporte al usuario.
             Por este medio podra consultar información como:
             Fecha de Inscripciones
