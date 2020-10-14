@@ -11,18 +11,6 @@
             $bot->sendMessage($message->getChat()->getId(), 'pong!');
         });
         
-        
-        $bot->sendMessage(918738335, '
-            Bienvenido a nuestro sistema de atención y soporte al usuario.
-            Por este medio podra consultar información como:
-            Fecha de Inscripciones
-            Información Personal
-            Consulta de Pagos
-            Soporte Tecnico
-            Cambiar codigo de verificación'
-        );
-      
-        
         $bot->run();
     
     } catch (\TelegramBot\Api\Exception $e) {
