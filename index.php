@@ -33,11 +33,12 @@
 
             if($cedula_id != null){
                 if ($db->query($sql)) {
-                   return $bot->sendMessage($message->getChat()->getId(), "Gracias por registrarse. Ahoras recibiras todas las notifaciones por este medio");
+                   $bot->sendMessage($message->getChat()->getId(), "Gracias por registrarse. Ahoras recibiras todas las notifaciones por este medio");
+                    return;
                 }
                 
-                return $bot->sendMessage($message->getChat()->getId(), "No se encontramos un usuario con esa cedula. Intente de nuevo!");
-                
+                 $bot->sendMessage($message->getChat()->getId(), "No se encontramos un usuario con esa cedula. Intente de nuevo!");
+                 return;
             }else{
                 $bot->sendMessage($message->getChat()->getId(), "No has introducido tu cedula ID");
             }
