@@ -27,6 +27,10 @@
                 $bot->sendMessage($message->getChat()->getId(), "
                     Gracias por registrarse $cedula_id
                 ");
+            }else{
+                $bot->sendMessage($message->getChat()->getId(), "
+                    No has introducido tu cedula ID
+                ");
             }
         });
         
