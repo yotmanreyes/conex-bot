@@ -19,6 +19,11 @@
                 2. Se validara tu cedula en nuestro sistema
             ');
         });
+
+        $bot->command('register', function ($message) use ($bot) {
+            $user_cedula = explode(' ', $message);
+            $bot->sendMessage($message->getChat()->getId(), $user_cedula);
+        });
         
         $bot->run();
     
