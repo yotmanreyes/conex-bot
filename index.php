@@ -23,7 +23,7 @@
         $bot->command('registrar', function ($message) use ($bot) {
             $str = explode(' ', $message);
             $cedula_id = intval($str[1]);
-            if($cedula_id){
+            if($cedula_id != null){
                 $bot->sendMessage($message->getChat()->getId(), "
                     Gracias por registrarse
                 ");
