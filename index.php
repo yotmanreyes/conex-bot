@@ -25,7 +25,7 @@
             $cedula_id = intval($str[1]);
             if($cedula_id){
                 $bot->sendMessage($message->getChat()->getId(), "
-                    Gracias por registrarse $cedula_id
+                    Gracias por registrarse
                 ");
             }else{
                 $bot->sendMessage($message->getChat()->getId(), "
