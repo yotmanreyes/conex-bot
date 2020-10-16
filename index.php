@@ -21,7 +21,7 @@
         });
 
         $bot->command('registrar', function ($message) use ($bot) {
-            $str = explode(' ', $message);
+            $str = explode(' ', $message->getText());
             $cedula_id = intval($str[1]);
             if($cedula_id != null){
                 $bot->sendMessage($message->getChat()->getId(), "
