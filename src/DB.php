@@ -5,7 +5,7 @@ class Database
     static $_instance;
 
     private function __construct() {
-        $this->_db = new PDO('mysql:host=demoscs4.conexstudios.net;dbname=demoscs4_liceos_v2', 'demoscs4_admin1', 'D8m~@#L;BO#v');
+        $this->_db = new PDO('mysql:host=66.113.164.200;dbname=demoscs4_liceos_v2', 'demoscs4_admin1', 'D8m~@#L;BO#v');
         $this->_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
