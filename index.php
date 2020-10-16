@@ -1,7 +1,7 @@
 <?php 
 
     require_once __DIR__ . "/vendor/autoload.php";
-    require_once "../src/DB.php";
+    require_once __DIR__ . "/src/DB.php";
 
     try {
         $bot = new \TelegramBot\Api\Client('1239904902:AAHWGS40MoO1x2wcvPs-SuzMmO_R-X28EOw', '571e37d4-a0b4-439f-a677-5f9ca6956803');
