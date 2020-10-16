@@ -11,6 +11,15 @@
             $bot->sendMessage($message->getChat()->getId(), 'pong!');
         });
         
+        $bot->command('start', function ($message) use ($bot) {
+            $bot->sendMessage($message->getChat()->getId(), '
+                ¡Hola! y bienvenido a nuestro sistema de mensajeria.
+                Para proceder al registro de tu usuario es necesario:
+                1. Utilizar el comando /registrar seguido de tu número de cédula.
+                2. Se validara tu cedula en nuestro sistema
+            ');
+        });
+        
         $bot->run();
     
     } catch (\TelegramBot\Api\Exception $e) {
