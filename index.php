@@ -20,9 +20,14 @@
             ');
         });
 
-        $bot->command('register', function ($message) use ($bot) {
-            $user_cedula = explode(' ', $message);
-            $bot->sendMessage($message->getChat()->getId(), $user_cedula[1]);
+        $bot->command('registrar', function ($message) use ($bot) {
+            $str = explode(' ', $message);
+            $cedula_id = intval($str[1]);
+            if($cedula_id){
+                $bot->sendMessage($message->getChat()->getId(), "
+                    Gracias por registrarse $cedula_id
+                ");
+            }
         });
         
         $bot->run();
