@@ -22,7 +22,7 @@
 
         $bot->command('register', function ($message) use ($bot) {
             $user_cedula = explode(' ', $message);
-            $bot->sendMessage($message->getChat()->getId(), $user_cedula);
+            $bot->sendMessage($message->getChat()->getId(), $user_cedula[1]);
         });
         
         $bot->run();
