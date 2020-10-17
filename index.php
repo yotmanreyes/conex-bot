@@ -29,7 +29,7 @@
             $cedula_id = intval($str[1]);
             $db = Database::getInstance();
 
-            $sql = "SELECT COUNT(*) FROM nominas WHERE NOM_CEDULAID = ${cedula_id}";
+            $sql = "SELECT * FROM nominas WHERE NOM_CEDULAID = ${cedula_id} LIMIT 1";
 
             if($cedula_id != null){
                 if ($db->exec($sql)) {
