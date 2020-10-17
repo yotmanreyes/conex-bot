@@ -1,7 +1,7 @@
 <?php 
 
     require_once __DIR__ . "/vendor/autoload.php";
-    // require_once __DIR__ . "/src/DB.php";
+    require_once __DIR__ . "/src/DB.php";
 
     try {
         $bot = new \TelegramBot\Api\Client('1239904902:AAHWGS40MoO1x2wcvPs-SuzMmO_R-X28EOw', '571e37d4-a0b4-439f-a677-5f9ca6956803');
@@ -27,14 +27,16 @@
             $str = explode(' ', $message->getText());
             $chat_id = $message->getChat()->getId();
             $cedula_id = intval($str[1]);
-            // $db = Database::getInstance();
+            $db = Database::getInstance();
 
             $sql = "SELECT COUNT(*) FROM nominas WHERE NOM_CEDULAID = ${cedula_id}";
 
             if($cedula_id != null){
-          
-                $bt->sendMessage($message->getChat()->getId(), "Gracias por registrarse. Ahoras recibiras todas las notifaciones por este medio");
-               
+                if ($db->query($sql)) {
+                    $bot->sendMessage($message->getChat()->getId(), "Gracias por registrarse. Ahoras recibiras todas las notifaciones por este medio");
+                }else{
+                    $bot->sendMessage($message->getChat()->getId(), "No se encontramos un usuario con esa cedula. Intente de nuevo!");
+                }
             } else{
                 $bot->sendMessage($message->getChat()->getId(), "No has introducido tu cedula ID");
             }
