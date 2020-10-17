@@ -29,13 +29,15 @@
             $cedula_id = intval($str[1]);
             $db = Database::getInstance();
 
-            $sql = "SELECT * FROM nominas WHERE NOM_CEDULAID = ${cedula_id} LIMIT 1";
+            $sql = "SELECT * FROM nominas WHERE NOM_CEDULAID = ${cedula_id} AND NOM_CHAT_ID IS NULL LIMIT 1";
+            $update_chat_id = "UPDATE nominas SET NOM_CHAT_ID = ${chat_id} WHERE NOM_CEDULAID = ${cedula_id}";
 
             if($cedula_id != null){
                 if ($db->query($sql)->rowCount() > 0) {
                     $bot->sendMessage($message->getChat()->getId(), "Gracias por registrarse. Ahoras recibiras todas las notifaciones por este medio");
+                    $db->query($update_chat_id);
                 }else{
-                    $bot->sendMessage($message->getChat()->getId(), "No se encontramos un usuario con esa cedula. Intente de nuevo!");
+                    $bot->sendMessage($message->getChat()->getId(), "No encontramos un usuario con esa cedula. Intente de nuevo!");
                 }
             } else{
                 $bot->sendMessage($message->getChat()->getId(), "No has introducido tu cedula ID");
