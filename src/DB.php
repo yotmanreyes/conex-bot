@@ -21,5 +21,9 @@ class Database
     public function query($sql) {
         return $this->_db->query($sql);
     }
+    
+    public function exec($sql) {
+        return $this->_db->exec($sql);
+    }
 
 }
