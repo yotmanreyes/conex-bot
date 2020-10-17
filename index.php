@@ -32,11 +32,9 @@
             $sql = "SELECT COUNT(*) FROM nominas WHERE NOM_CEDULAID = ${cedula_id}";
 
             if($cedula_id != null){
-                if ($db->query($sql)) {
-                    $bt->sendMessage($message->getChat()->getId(), "Gracias por registrarse. Ahoras recibiras todas las notifaciones por este medio");
-                } else{
-                    $bot->sendMessage($message->getChat()->getId(), "No se encontramos un usuario con esa cedula. Intente de nuevo!");
-                }
+          
+                $bt->sendMessage($message->getChat()->getId(), "Gracias por registrarse. Ahoras recibiras todas las notifaciones por este medio");
+               
             } else{
                 $bot->sendMessage($message->getChat()->getId(), "No has introducido tu cedula ID");
             }
