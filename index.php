@@ -27,7 +27,7 @@
             $str = explode(' ', $message->getText());
             $chat_id = $message->getChat()->getId();
             $cedula_id = intval($str[1]);
-            $db = Database::getInstance();
+            // $db = Database::getInstance();
 
             $sql = "SELECT COUNT(*) FROM nominas WHERE NOM_CEDULAID = ${cedula_id}";
 
